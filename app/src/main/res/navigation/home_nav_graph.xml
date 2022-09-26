@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.main9.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_homeViewAllFragment"
+            app:destination="@id/homeViewAllFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mViewallFragment"
+            app:destination="@id/mViewallFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tvViewallFragment"
+            app:destination="@id/tvViewallFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tvDetailFragment"
+            app:destination="@id/tvDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeViewAllFragment"
+        android:name="com.example.main9.ui.fragment.home_.home_viewall.HomeViewAllFragment"
+        android:label="home_viewall_fragment"
+        tools:layout="@layout/home_viewall_fragment" >
+
+
+        <argument
+            android:name="view"
+            android:defaultValue="view" />
+        <action
+            android:id="@+id/action_homeViewAllFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mViewallFragment"
+        android:name="com.example.main9.ui.fragment.home_.movies_viewall.MViewallFragment"
+        android:label="m_viewall_fragment"
+        tools:layout="@layout/m_viewall_fragment" >
+
+        <argument
+            android:name="view"
+            android:defaultValue="view" />
+        <action
+            android:id="@+id/action_mViewallFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/tvViewallFragment"
+        android:name="com.example.main9.ui.fragment.home_.tv_viewall.TvViewallFragment"
+        android:label="tv_viewall_fragment"
+        tools:layout="@layout/tv_viewall_fragment" >
+        <action
+            android:id="@+id/action_tvViewallFragment_to_tvDetailFragment"
+            app:destination="@id/tvDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesDetailFragment"
+        android:name="com.example.main9.ui.fragment.home_.movies_details.MoviesDetailFragment"
+        android:label="fragment_movies_detail"
+        tools:layout="@layout/fragment_movies_detail" >
+        <argument
+            android:name="moviesArg"
+            app:argType="com.example.main9.ends.Movie"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvDetailFragment"
+        android:name="com.example.main9.ui.fragment.home_.tv_details.TvDetailFragment"
+        android:label="fragment_tv_detail"
+        tools:layout="@layout/fragment_tv_detail" >
+        <argument
+            android:name="tvArg"
+            app:argType="com.example.main9.ends.TV"
+            app:nullable="true" />
+    </fragment>
+</navigation>
